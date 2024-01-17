@@ -12,7 +12,7 @@ const Registration = () => {
       status: "Active",
       location: "Antipolo",
       price: 500,
-      title: "SSOT",
+      title: "Summer School of Truth",
       description: "Summer School of Truth",
       buttonLink: "/registration/summer-school-of-truth"
     },
@@ -39,7 +39,7 @@ const Registration = () => {
       status: "Closed",
       location: "Taguig City",
       price: 500,
-      title: "TOLT",
+      title: "Tour of a Lifetime",
       description: "Tour of a Lifetime",
       buttonLink: "/registration/tour-of-a-lifetime"
     },
@@ -66,7 +66,7 @@ const Registration = () => {
       status: "Closed",
       location: "Antipolo",
       price: 500,
-      title: "FAC",
+      title: "Fellowship Among the Churches",
       description: "Fellowship Among the Churches",
       buttonLink: "/registration/fellowship-among-the-churches"
     },
@@ -82,12 +82,12 @@ const Registration = () => {
   ];
 
   return (
-    <div className="m-2 w-full">
-      <div className="text-2xl font-bold mb-2 p-2 dark:text-gray-200 mx-8">
+    <div className="w-full">
+      <div className="text-lg sm:text-2xl font-bold mb-2 p-2 dark:text-gray-200 m-6 mt-2">
         Register Now
       </div>
 
-      <div className="flex flex-wrap gap-4 justify-center p-8 sm:p-2">
+      <div className="flex flex-wrap gap-4 justify-center  ">
         {cardData.map((card, index) =>
           <div
             key={index}

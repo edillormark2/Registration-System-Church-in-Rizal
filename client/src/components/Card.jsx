@@ -3,17 +3,9 @@ import { MdLocationOn } from "react-icons/md";
 import { TbCurrencyPeso } from "react-icons/tb";
 import { Link } from "react-router-dom";
 
-const Card = ({
-  image,
-  location,
-  price,
-  title,
-  description,
-  buttonLink,
-  status
-}) => {
+const Card = ({ image, location, price, title, buttonLink, status }) => {
   return (
-    <div className="relative bg-white rounded-md drop-shadow-xl dark:bg-secondary-dark-bg sm:w-full md:w-full lg:w-full xl:w-full mb-6 ">
+    <div className="relative bg-white rounded-md drop-shadow-xl dark:bg-secondary-dark-bg mb-6 overflow-hidden transform transition-transform hover:scale-105">
       <img
         className="h-52 w-full object-cover rounded-t-lg"
         src={image}
@@ -23,8 +15,8 @@ const Card = ({
         <div className="absolute top-2 right-2 bg-primary text-white py-1 px-2 rounded-md text-xs opacity-75">
           {status}
         </div>}
-      <div className="flex flex-col  m-2 dark:text-gray-200">
-        <div className="flex justify-between ">
+      <div className="flex flex-col m-2 dark:text-gray-200">
+        <div className="flex justify-between">
           <p className="flex items-center text-sm">
             <MdLocationOn className="mr-1" />
             {location}

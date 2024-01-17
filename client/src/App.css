@@ -2,14 +2,18 @@
 @import url('https://fonts.cdnfonts.com/css/ds-digital');
 
 ::-webkit-scrollbar {
-  width: 6px;
+  width: 8px;
 }
 ::-webkit-scrollbar-thumb {
-  background-color: rgb(216, 216, 216);
+  background-color: rgb(189, 189, 189);
   border-radius: 25px;
 }
 ::-webkit-scrollbar-track {
   background-color: transparent;
+}
+
+.navbar {
+  z-index: 10000;
 }
 
 .form-control {

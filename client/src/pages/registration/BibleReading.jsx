@@ -5,6 +5,16 @@ import Tooltip from "@mui/material/Tooltip"; // Import Tooltip component from Ma
 import Fade from "@mui/material/Fade";
 
 const BibleReading = () => {
+  const registrationData = [
+    {
+      title: "RYP Bible Reading Pre-Reg Form",
+      description:
+        "Bible Reading old testament will be on December 19-22, 2023 In the province of Rizal, it will be held at the church in Antipolo Meeting Hall."
+    }
+  ];
+
+  const { title, description } = registrationData[0];
+
   return (
     <div className="px-4 py-12 max-w-4xl mx-auto">
       <Link to="/registration">
@@ -20,8 +30,13 @@ const BibleReading = () => {
         </Tooltip>
       </Link>
 
-      <div className="bg-white p-8 rounded-md shadow-md border border-gray-300 dark:border-gray-500 dark:bg-secondary-dark-bg dark:text-gray-200 text-xl sm:text-3xl font-semibold mb-4">
-        RYP Bible Reading Pre-Reg Form
+      <div className="bg-white p-8 rounded-md shadow-md border border-gray-300 dark:border-gray-500 dark:bg-secondary-dark-bg mb-4">
+        <p className="dark:text-gray-200 text-xl sm:text-3xl font-semibold mb-4">
+          {title}
+        </p>
+        <p className="dark:text-gray-200 text-sm sm:text-md mb-2">
+          {description}
+        </p>
       </div>
 
       <div className="bg-white p-8 rounded-md shadow-md border border-gray-300 dark:border-gray-500 dark:bg-secondary-dark-bg  text-sm sm:text-lg mb-4">

@@ -36,25 +36,25 @@ const Home = () => {
       <div className="flex flex-col xl:flex-row mx-auto w-5/6 lg:w-11/12 lg:mx-18 2xl:mx-24 xl:max-w-6xl 2xl:max-w-7xl mb-16">
         {/* Text content on the left side */}
         <div className="w-full xl:w-1/2 2xl:w-2/3">
-          <div className="mt-6 md:mt-16  lg:mt-16 xl:mt-48">
-            <div className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl dark:text-gray-100 mb-4 sm:mb-4 md:mb-6 font-semibold">
+          <div className="mt-6 md:mt-16 lg:mt-16 xl:mt-48">
+            <div className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl dark:text-gray-100 mb-4 sm:mb-4 md:mb-6 font-semibold text-center xl:text-left">
               Website for church in Rizal, Amen Praise the Lord!
             </div>
-            <p className="text-md dark:text-gray-100">
+            <p className="text-md dark:text-gray-100 leading-normal md:leading-loose text-center xl:text-left">
               Explore our fully customized website designed exclusively for
               Rizal churches. From event registrations to announcements, about,
               contact, home, and gallery pages, we've tailored every section to
-              meet the specific needs of our community.
+              meet the specific needs.
             </p>
           </div>
         </div>
 
         {/* Images on the right side */}
-        <div className="flex flex-col xl-2/5 sm:flex-row md:flex-row lg:flex-row xl:mt-28 mt-6 md:mt-0 gap-4 lg:gap-0 xl:ml-16">
+        <div className="flex flex-col xl-2/5 sm:flex-row md:flex-row lg:flex-row xl:mt-28 mt-6 md:mt-0 gap-4 lg:gap-0 xl:ml-16 justify-center">
           <img
             src={tolt}
             alt="Tolt"
-            className="w-full md:w-1/3 md:mt-16 lg:mt-16 xl:mt-8 lg:mr-4 lg:w-80 xl:w-48 h-72 object-cover rounded-md border border-primary drop-shadow-2xl  transform transition-transform hover:scale-110"
+            className="w-full md:w-1/3 md:mt-16 lg:mt-16 xl:mt-8 lg:mr-4 lg:w-80 xl:w-48 h-72 object-cover rounded-md border border-primary drop-shadow-2xl transform transition-transform hover:scale-110"
           />
           <img
             src={taguig}
@@ -139,7 +139,7 @@ const Home = () => {
             </div>
           </div>}
 
-      <div className="mt-48">
+      <div className="mt-18 md:mt-20 lg:mt-52">
         <Registration />
       </div>
     </div>

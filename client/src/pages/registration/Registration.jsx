@@ -83,7 +83,7 @@ const Registration = () => {
 
   return (
     <div className="w-full">
-      <div className="text-lg sm:text-2xl font-bold mb-2 p-2 dark:text-gray-200 m-6 mt-2">
+      <div className="text-lg sm:text-2xl font-bold mb-4 p-2 dark:text-gray-200 m-6 mt-2 lg:ml-32">
         Register Now
       </div>
 

@@ -4,6 +4,7 @@ import { TbCurrencyPeso } from "react-icons/tb";
 import { Link } from "react-router-dom";
 
 const Card = ({ image, location, price, title, buttonLink, status }) => {
+  
   return (
     <div className="relative bg-white rounded-md drop-shadow-xl dark:bg-secondary-dark-bg mb-6 overflow-hidden transform transition-transform hover:scale-105">
       <img

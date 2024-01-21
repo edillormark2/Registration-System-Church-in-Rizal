@@ -1,7 +1,7 @@
 import React from "react";
 import { FaArrowLeft } from "react-icons/fa6";
-import { Link } from "react-router-dom";
-import Tooltip from "@mui/material/Tooltip"; // Import Tooltip component from Material-UI
+import { useNavigate } from "react-router-dom";
+import Tooltip from "@mui/material/Tooltip";
 import Fade from "@mui/material/Fade";
 
 const BibleReading = () => {
@@ -15,20 +15,27 @@ const BibleReading = () => {
 
   const { title, description } = registrationData[0];
 
+  const navigate = useNavigate();
+
+  const goBack = () => {
+    navigate(-1); // Navigate back in the history
+  };
+
   return (
     <div className="px-4 py-12 max-w-4xl mx-auto">
-      <Link to="/registration">
-        <Tooltip
-          arrow
-          title="Go back"
-          placement="right"
-          TransitionComponent={Fade}
+      <Tooltip
+        arrow
+        title="Go back"
+        placement="right"
+        TransitionComponent={Fade}
+      >
+        <button
+          className="bg-primary text-white text-center p-2 rounded-full hover:opacity-85 disabled:opacity-70 text-sm sm:text-base mb-4 cursor-pointer w-8"
+          onClick={goBack}
         >
-          <div className="bg-primary text-white text-center p-2 rounded-full hover:opacity-85 disabled:opacity-70 text-sm sm:text-base mb-4 cursor-pointer w-8">
-            <FaArrowLeft />
-          </div>
-        </Tooltip>
-      </Link>
+          <FaArrowLeft />
+        </button>
+      </Tooltip>
 
       <div className="bg-white p-8 rounded-md shadow-md border border-gray-300 dark:border-gray-500 dark:bg-secondary-dark-bg mb-4">
         <p className="dark:text-gray-200 text-xl sm:text-3xl font-semibold mb-4">

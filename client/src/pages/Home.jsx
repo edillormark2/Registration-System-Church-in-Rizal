@@ -50,7 +50,7 @@ const Home = () => {
         </div>
 
         {/* Images on the right side */}
-        <div className="flex flex-col xl-2/5 sm:flex-row md:flex-row lg:flex-row xl:mt-28 mt-6 md:mt-0 gap-4 lg:gap-0 xl:ml-16 justify-center">
+        <div className="flex flex-col sm:flex-row md:flex-row lg:flex-row xl:mt-28 mt-6 md:mt-0 gap-4 lg:gap-0 md:ml-2 lg:ml-12 xl:ml-36 justify-center">
           <img
             src={tolt}
             alt="Tolt"

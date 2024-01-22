@@ -22,7 +22,7 @@ const BibleReading = () => {
   };
 
   return (
-    <div className="px-4 py-12 max-w-4xl mx-auto">
+    <div className="px-4 py-4 md:py-10 max-w-4xl mx-auto">
       <Tooltip
         arrow
         title="Go back"

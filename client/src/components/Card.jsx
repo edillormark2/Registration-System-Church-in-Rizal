@@ -4,7 +4,14 @@ import { TbCurrencyPeso } from "react-icons/tb";
 import { Link } from "react-router-dom";
 
 const Card = ({ image, location, price, title, buttonLink, status }) => {
-  
+  const handleRegisterClick = () => {
+    // Scroll to the top of the page when the "Register Now" button is clicked
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  };
+
   return (
     <div className="relative bg-white rounded-md drop-shadow-xl dark:bg-secondary-dark-bg mb-6 overflow-hidden transform transition-transform hover:scale-105">
       <img
@@ -31,7 +38,10 @@ const Card = ({ image, location, price, title, buttonLink, status }) => {
           {title}
         </h1>
         <Link to={buttonLink}>
-          <div className="bg-primary text-white text-center p-2 rounded-md hover:opacity-85 disabled:opacity-80 text-sm sm:text-base cursor-pointer m-2">
+          <div
+            className="bg-primary text-white text-center p-2 rounded-md hover:opacity-85 disabled:opacity-80 text-sm sm:text-base cursor-pointer m-2"
+            onClick={handleRegisterClick}
+          >
             Register Now
           </div>
         </Link>

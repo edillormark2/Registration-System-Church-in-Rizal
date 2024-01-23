@@ -18,12 +18,12 @@ export const Navlinks = [
   },
   {
     id: 3,
-    name: "About",
+    name: "About Us",
     link: "/about"
   },
   {
     id: 4,
-    name: "Contact",
+    name: "Contact Us",
     link: "/contact"
   }
 ];

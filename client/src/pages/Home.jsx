@@ -7,6 +7,7 @@ import { SlPeople } from "react-icons/sl";
 import Registration from "./registration/Registration";
 import Divider from "@mui/material/Divider";
 import MobileStats from "../components/MobileStats";
+import Contact from "./Contact";
 
 const Home = () => {
   const isDarkMode =
@@ -141,6 +142,9 @@ const Home = () => {
 
       <div className="mt-18 md:mt-20 lg:mt-52">
         <Registration />
+      </div>
+      <div className="mt-12 md:mt-16 lg:mt-0">
+        <Contact />
       </div>
     </div>
   );

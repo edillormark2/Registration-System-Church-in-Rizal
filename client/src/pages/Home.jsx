@@ -9,6 +9,7 @@ import Divider from "@mui/material/Divider";
 import MobileStats from "../components/MobileStats";
 import Contact from "./Contact";
 import Gallery from "./Gallery";
+import Footer from "../components/Footer";
 
 const Home = () => {
   const isDarkMode =
@@ -151,6 +152,9 @@ const Home = () => {
 
       <div className="mt-12 md:mt-16 lg:mt-16">
         <Contact />
+      </div>
+      <div className="mt-12 md:mt-16 lg:mt-16">
+        <Footer />
       </div>
     </div>
   );

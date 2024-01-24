@@ -1,0 +1,55 @@
+@import "~slick-carousel/slick/slick.css";
+@import "~slick-carousel/slick/slick-theme.css";
+
+/* Add these styles to your existing CSS */
+
+.slide {
+  position: relative;
+}
+
+.inactiveSlide {
+  opacity: 0.5;
+  transform: scale(0.9);
+  transition: opacity 300ms, transform 300ms;
+  z-index: 1; /* Ensure inactive slides are below the active slide */
+}
+
+.activeSlide {
+  opacity: 1;
+  transform: scale(1.2);
+  transition: opacity 300ms, transform 300ms;
+  z-index: 2; /* Ensure the active slide is on top of inactive slides */
+}
+
+.arrow {
+  background-color: #fff;
+  position: absolute;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.arrow svg {
+  transition: color 300ms;
+}
+
+.arrow svg:hover {
+  color: #68edff;
+}
+
+.next {
+  right: 50%;
+  top: 70%; /* Adjust the positioning as needed */
+  z-index: 3; /* Ensure the next arrow is on top of the slides */
+}
+
+.prev {
+  left: 50%;
+  top: 70%; /* Adjust the positioning as needed */
+  z-index: 3; /* Ensure the previous arrow is on top of the slides */
+}
+
+.bottom {
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+}

@@ -1,8 +1,6 @@
 import React from "react";
-import { FaInstagram } from "react-icons/fa";
 import { FaFacebook, FaGithub } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
-import { FaLinkedin } from "react-icons/fa";
 import { FaYoutube } from "react-icons/fa";
 
 function Footer() {
@@ -40,38 +38,38 @@ function Footer() {
           <p className="text-gray-800 dark:text-gray-200 font-bold text-md  md:text-xl pb-4">
             Quick Links
           </p>
-          <li className="text-gray-500 dark:text-gray-300 pb-2 font-semibold hover:text-primary dark:hover:text-primary cursor-pointer sm:text-sm  text-md">
+          <li className="text-gray-500 dark:text-gray-300 pb-2 font-semibold hover:text-primary dark:hover:text-primary cursor-pointer text-sm">
             Registration
           </li>
-          <li className="text-gray-500 dark:text-gray-300  text-md pb-2 font-semibold hover:text-primary dark:hover:text-primary cursor-pointer">
+          <li className="text-gray-500 dark:text-gray-300  text-sm pb-2 font-semibold hover:text-primary dark:hover:text-primary cursor-pointer">
             Annoucement
           </li>
-          <li className="text-gray-500  dark:text-gray-300 text-md pb-2 font-semibold hover:text-primary dark:hover:text-primary cursor-pointer">
+          <li className="text-gray-500  dark:text-gray-300 text-sm pb-2 font-semibold hover:text-primary dark:hover:text-primary cursor-pointer">
             About Us
           </li>
-          <li className="text-gray-500 dark:text-gray-300  text-md pb-2 font-semibold hover:text-primary dark:hover:text-primary cursor-pointer">
+          <li className="text-gray-500 dark:text-gray-300  text-sm pb-2 font-semibold hover:text-primary dark:hover:text-primary cursor-pointer">
             Contact Us
           </li>
         </ul>
       </div>
       <div>
         <ul className="p-4">
-          <p className="text-gray-800 dark:text-gray-200 font-bold text-xl pb-4">
+          <p className="text-gray-800 dark:text-gray-200 font-bold text-md  md:text-xl pb-4">
             Information
           </p>
-          <li className="text-gray-500 dark:text-gray-300  text-md pb-2 font-semibold hover:text-primary dark:hover:text-primary cursor-pointer">
+          <li className="text-gray-500 dark:text-gray-300 text-sm pb-2 font-semibold hover:text-primary dark:hover:text-primary cursor-pointer">
             Features
           </li>
-          <li className="text-gray-500 dark:text-gray-300  text-md pb-2 font-semibold hover:text-primary dark:hover:text-primary cursor-pointer">
+          <li className="text-gray-500 dark:text-gray-300  text-sm pb-2 font-semibold hover:text-primary dark:hover:text-primary cursor-pointer">
             FAQ
           </li>
-          <li className="text-gray-500  dark:text-gray-300 text-md pb-2 font-semibold hover:text-primary dark:hover:text-primary cursor-pointer">
+          <li className="text-gray-500  dark:text-gray-300 text-sm pb-2 font-semibold hover:text-primary dark:hover:text-primary cursor-pointer">
             Privacy policy
           </li>
-          <li className="text-gray-500 dark:text-gray-300 text-md pb-2 font-semibold hover:text-primary dark:hover:text-primary cursor-pointer">
+          <li className="text-gray-500 dark:text-gray-300 text-sm pb-2 font-semibold hover:text-primary dark:hover:text-primary cursor-pointer">
             Terms and condition
           </li>
-          <li className="text-gray-500 dark:text-gray-300 text-md pb-2 font-semibold hover:text-primary dark:hover:text-primary cursor-pointer">
+          <li className="text-gray-500 dark:text-gray-300 text-sm pb-2 font-semibold hover:text-primary dark:hover:text-primary cursor-pointer">
             Developer
           </li>
         </ul>

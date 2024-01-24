@@ -10,6 +10,9 @@ import MobileStats from "../components/MobileStats";
 import Contact from "./Contact";
 import Gallery from "./Gallery";
 import Footer from "../components/Footer";
+import MobileGallery from "../components/Gallery/MobileGallery";
+import Slider from "../components/Gallery/Slider";
+import Projects from "../components/Gallery/Projects";
 
 const Home = () => {
   const isDarkMode =
@@ -144,6 +147,12 @@ const Home = () => {
 
       <div className="mt-18 md:mt-20 lg:mt-52">
         <Registration />
+      </div>
+      <div className="mt-12 md:mt-16 lg:mt-56 mb-16">
+        <Projects />
+      </div>
+      <div className="mt-12 md:mt-16 lg:mt-56 mb-16">
+        <MobileGallery />
       </div>
 
       <div className="mt-12 md:mt-16 lg:mt-56 mb-16">

@@ -1,9 +1,9 @@
 import React from "react";
 import contact from "../images/contact.png";
 import contact1 from "../images/contact-simple.png";
-import { FiPhone } from "react-icons/fi";
-import { MdOutlineMail } from "react-icons/md";
-import { FiFacebook } from "react-icons/fi";
+import { BsFillTelephoneFill } from "react-icons/bs";
+import { FaFacebook } from "react-icons/fa";
+import { MdEmail } from "react-icons/md";
 import { useStateContext } from "../context/ContextProvider";
 
 const Contact = () => {
@@ -61,7 +61,7 @@ const Contact = () => {
           <div className="flex flex-col gap-2 mt-8">
             <div className="flex flex-row gap-4">
               <div className="bg-white dark:bg-secondary-dark-bg rounded-full drop-shadow-md p-2">
-                <MdOutlineMail size={22} className="text-primary" />
+                <MdEmail size={22} className="text-primary" />
               </div>
               <p className="text-slate-500 text-md dark:text-gray-200">
                 rizalchurches@gmail.com
@@ -69,7 +69,7 @@ const Contact = () => {
             </div>
             <div className="flex flex-row gap-4">
               <div className="bg-white dark:bg-secondary-dark-bg rounded-full drop-shadow-md p-2">
-                <FiFacebook size={22} className="text-primary" />
+                <FaFacebook size={22} className="text-primary" />
               </div>
               <p className="text-slate-500 text-md dark:text-gray-200">
                 Rizal Churches
@@ -77,7 +77,7 @@ const Contact = () => {
             </div>
             <div className="flex flex-row gap-4">
               <div className="bg-white dark:bg-secondary-dark-bg rounded-full drop-shadow-md p-2">
-                <FiPhone size={22} className="text-primary" />
+                <BsFillTelephoneFill size={22} className="text-primary" />
               </div>
               <p className="text-slate-500 text-md dark:text-gray-200">
                 09123456789

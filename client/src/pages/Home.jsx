@@ -144,9 +144,11 @@ const Home = () => {
       <div className="mt-18 md:mt-20 lg:mt-52">
         <Registration />
       </div>
-      <div className="mt-12 md:mt-16 lg:mt-16">
+
+      <div className="mt-12 md:mt-16 lg:mt-56 mb-16">
         <Gallery />
       </div>
+
       <div className="mt-12 md:mt-16 lg:mt-16">
         <Contact />
       </div>

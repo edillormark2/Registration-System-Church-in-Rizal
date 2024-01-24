@@ -11,7 +11,7 @@ const Contact = () => {
 
   return (
     <div className="flex justify-center items-center">
-      <div className="flex flex-col md:flex-row gap-20 md:gap-24 lg:gap-32 xl:gap-48 max-w-7xl mx-16 my-8 p-2 md:p-8">
+      <div className="flex flex-col md:flex-row  gap-20 md:gap-24 lg:gap-32 xl:gap-48 max-w-7xl mx-8 lg:mx-16 my-8 p-2 md:p-4">
         {/* Left side of the screen */}
         <div className="w-full md:w-1/2">
           <h1 className="text-2xl dark:text-gray-200 font-semibold text-primary">
@@ -39,39 +39,46 @@ const Contact = () => {
               className="form-control-1 w-full bg-slate-100 p-3 rounded-lg border border-primary text-sm sm:text-base dark:bg-secondary-dark-bg dark:text-gray-200 mb-4"
               rows="5"
             />
-            <div className="bg-primary text-white text-center p-2 rounded-md hover:opacity-85 disabled:opacity-80 text-sm sm:text-base cursor-pointer w-full mt-24">
+            <div className="bg-primary text-white text-center p-2 rounded-md hover:opacity-85 disabled:opacity-80 text-sm sm:text-base cursor-pointer w-full mt-8 md:mt-12 lg:mt-24">
               Submit
             </div>
           </div>
         </div>
+
         {/* Right side of the screen */}
-        <div className="w-full md:w-1/2">
+        <div className="w-full md:w-5/12 lg:w-1/2">
           {currentMode === "Dark"
             ? <img
                 src={contact1}
                 alt="Contact1"
-                className="object-cover h-3/4 w-11/12"
+                className="object-cover h-3/4 w-11/12 md:h-3/5 lg:h-3/4"
               />
             : <img
                 src={contact}
                 alt="Contact"
-                className="object-cover h-3/4 w-11/12"
+                className="object-cover h-3/4 w-11/12 md:h-3/5 lg:h-3/4"
               />}
-          <div className="flex flex-col gap-4 mt-12">
+          <div className="flex flex-col gap-2 mt-8">
             <div className="flex flex-row gap-4">
-              <MdOutlineMail size={22} className="text-primary" />
+              <div className="bg-white dark:bg-secondary-dark-bg rounded-full drop-shadow-md p-2">
+                <MdOutlineMail size={22} className="text-primary" />
+              </div>
               <p className="text-slate-500 text-md dark:text-gray-200">
                 rizalchurches@gmail.com
               </p>
             </div>
             <div className="flex flex-row gap-4">
-              <FiFacebook size={22} className="text-primary" />
+              <div className="bg-white dark:bg-secondary-dark-bg rounded-full drop-shadow-md p-2">
+                <FiFacebook size={22} className="text-primary" />
+              </div>
               <p className="text-slate-500 text-md dark:text-gray-200">
                 Rizal Churches
               </p>
             </div>
             <div className="flex flex-row gap-4">
-              <FiPhone size={22} className="text-primary" />
+              <div className="bg-white dark:bg-secondary-dark-bg rounded-full drop-shadow-md p-2">
+                <FiPhone size={22} className="text-primary" />
+              </div>
               <p className="text-slate-500 text-md dark:text-gray-200">
                 09123456789
               </p>

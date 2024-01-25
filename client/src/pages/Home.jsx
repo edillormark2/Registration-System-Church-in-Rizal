@@ -13,11 +13,12 @@ import Footer from "../components/Footer";
 import MobileGallery from "../components/Gallery/MobileGallery";
 import Slider from "../components/Gallery/Slider";
 import Projects from "../components/Gallery/Projects";
+import AboutComponent from "../components/AboutComponent";
 
 const Home = () => {
   const isDarkMode =
     window.matchMedia &&
-    window.matchMedia("(prefers-color-scheme: dark)").matches;
+    window.matchMedia("(prefers-color-scheme: Dark)").matches;
 
   // State to track if the screen is mobile
   const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
@@ -74,7 +75,6 @@ const Home = () => {
           />
         </div>
       </div>
-
       {isMobile
         ? <MobileStats />
         : <div className="w-11/12  md:max-w-3xl lg:max-w-4xl xl:max-w-5xl mx-auto 2xl:ml-20 bg-white dark:bg-secondary-dark-bg dark:text-gray-200 drop-shadow-xl rounded-xl p-6 gap-8 md:gap-10 lg:gap-12 xl:gap-16 flex flex-col md:flex-row justify-center">
@@ -144,21 +144,20 @@ const Home = () => {
               </div>
             </div>
           </div>}
-
       <div className="mt-18 md:mt-20 lg:mt-52">
         <Registration />
       </div>
-      <div className="mt-12 md:mt-16 lg:mt-56 mb-16">
-        <Projects />
+      <div className="my-20">
+        <AboutComponent />
       </div>
-      <div className="mt-12 md:mt-16 lg:mt-56 mb-16">
+
+      {/*<div className="mt-12 md:mt-16 lg:mt-56 mb-16">
         <MobileGallery />
-      </div>
+            </div>*/}
 
       <div className="mt-12 md:mt-16 lg:mt-56 mb-16">
         <Gallery />
       </div>
-
       <div className="mt-12 md:mt-16 lg:mt-16">
         <Contact />
       </div>

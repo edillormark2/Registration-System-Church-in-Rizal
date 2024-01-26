@@ -11,14 +11,30 @@ import Contact from "./Contact";
 import Gallery from "./Gallery";
 import Footer from "../components/Footer";
 import MobileGallery from "../components/Gallery/MobileGallery";
-import Slider from "../components/Gallery/Slider";
-import Projects from "../components/Gallery/Projects";
 import AboutComponent from "../components/AboutComponent";
 
 const Home = () => {
   const isDarkMode =
     window.matchMedia &&
     window.matchMedia("(prefers-color-scheme: Dark)").matches;
+
+  // State to track if the screen is mobile
+  const [isMobile1, setIsMobile1] = useState(window.innerWidth < 1200);
+
+  // Function to update screen width state
+  const updateScreenWidth1 = () => {
+    setIsMobile1(window.innerWidth < 1200);
+  };
+
+  // Add event listener for window resize
+  useEffect(() => {
+    window.addEventListener("resize", updateScreenWidth1);
+
+    // Clean up the event listener on component unmount
+    return () => {
+      window.removeEventListener("resize", updateScreenWidth1);
+    };
+  }, []);
 
   // State to track if the screen is mobile
   const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
@@ -147,16 +163,11 @@ const Home = () => {
       <div className="mt-18 md:mt-20 lg:mt-52">
         <Registration />
       </div>
-      <div className="my-20">
+      <div className="my-24">
         <AboutComponent />
       </div>
-
-      {/*<div className="mt-12 md:mt-16 lg:mt-56 mb-16">
-        <MobileGallery />
-            </div>*/}
-
-      <div className="mt-12 md:mt-16 lg:mt-56 mb-16">
-        <Gallery />
+      <div className="mt-28 mb-16">
+        {isMobile1 ? <MobileGallery /> : <Gallery />}
       </div>
       <div className="mt-12 md:mt-16 lg:mt-16">
         <Contact />

@@ -9,16 +9,16 @@ const AboutComponent = () => {
 
   return (
     <div className="max-w-9xl mx-4 md:mx-20 lg:mx-8 xl:mx-20 ">
-      <div className="mb-4 dark:text-gray-200 text-center">
-        <h1 className="text-4xl font-semibold md:mt-16">Get to know us</h1>
+      <div className="dark:text-gray-200 text-center">
+        <h1 className="text-3xl md:text-4xl font-semibold">Get to know us</h1>
         <div className="flex justify-center m-2">
           <div className="bg-gray-300 h-px w-80" />
         </div>
-        <p className="text-slate-700 dark:text-gray-200 font-semibold mb-0 md:mb-16">
+        <p className="text-slate-700 dark:text-gray-200 font-semibold mb-4 md:mb-16">
           Church in Rizal
         </p>
       </div>
-      <div className="flex flex-col lg:flex-row mx-4">
+      <div className="flex flex-col lg:flex-row">
         <div className="w-full lg:w-1/2">
           {currentMode === "Dark"
             ? <img

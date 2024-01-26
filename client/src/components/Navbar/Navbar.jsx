@@ -58,6 +58,9 @@ const Navbar = () => {
     setCurrentPath(link);
     navigate(link); // Navigate to the clicked link
     setShowMenu(false); // Close the menu after clicking a link
+    window.scrollTo({
+      top: 0
+    });
   };
 
   return (
@@ -85,11 +88,13 @@ const Navbar = () => {
                   </NavLink>
                 </li>
               )}
-              <Link to="/registration">
-                <div className="flex items-center cursor-pointer ml-2 lg:ml-28 bg-primary px-4 py-2 rounded-full text-white hover:opacity-80 transition-colors duration-500">
-                  Register
-                </div>
-              </Link>
+              <div className="ml-2 lg:ml-28">
+                <Link to="/registration">
+                  <button className="flex items-center cursor-pointer  bg-primary px-4 py-2 rounded-full text-white hover:opacity-80 transition-colors duration-500">
+                    Register
+                  </button>
+                </Link>
+              </div>
               {/* DarkMode feature implement */}
               <div
                 className={`flex items-center cursor-pointer bg-gray-200 p-2 rounded-xl dark:text-black`}

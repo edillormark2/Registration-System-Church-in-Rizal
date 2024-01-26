@@ -7,8 +7,7 @@ const Card = ({ image, location, price, title, buttonLink, status }) => {
   const handleRegisterClick = () => {
     // Scroll to the top of the page when the "Register Now" button is clicked
     window.scrollTo({
-      top: 0,
-      behavior: "smooth"
+      top: 0
     });
   };
 

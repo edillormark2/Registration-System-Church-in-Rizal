@@ -163,7 +163,7 @@ const Home = () => {
       <div className="mt-18 md:mt-20 lg:mt-52">
         <Registration />
       </div>
-      <div className="my-24">
+      <div className="my-28">
         <AboutComponent />
       </div>
       <div className="mt-28 mb-16">

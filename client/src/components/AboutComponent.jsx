@@ -10,9 +10,9 @@ const AboutComponent = () => {
   return (
     <div className="max-w-9xl mx-4 md:mx-20 lg:mx-8 xl:mx-20 ">
       <div className="dark:text-gray-200 text-center">
-        <h1 className="text-3xl md:text-4xl font-semibold">Get to know us</h1>
+        <h1 className="text-2xl md:text-4xl font-semibold">Get to know us</h1>
         <div className="flex justify-center m-2">
-          <div className="bg-gray-300 h-px w-80" />
+          <div className="bg-gray-300 h-px w-64 sm:w-80" />
         </div>
         <p className="text-slate-700 dark:text-gray-200 font-semibold mb-4 md:mb-16">
           Church in Rizal
@@ -24,14 +24,15 @@ const AboutComponent = () => {
             ? <img
                 src={aboutsimple}
                 alt="about"
-                className="object-cover h-96 w-11/12"
+                className="object-cover h-96 w-4/5 mx-auto"
               />
             : <img
                 src={about}
                 alt="about"
-                className="object-cover h-96 w-11/12"
+                className="object-cover h-96 w-4/5 mx-auto"
               />}
         </div>
+
         <div className="w-full lg:w-1/2 my-0 md:my-16">
           <div className="bg-white dark:bg-secondary-dark-bg rounded-md drop-shadow-lg  p-4 dark:text-gray-200 text-sm xl:text-base ">
             <p>

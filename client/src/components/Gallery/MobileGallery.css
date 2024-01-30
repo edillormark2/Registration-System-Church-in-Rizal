@@ -80,4 +80,5 @@
 .hover-text {
   color: white;
   text-align: center;
+  border-radius: 8px;
 }

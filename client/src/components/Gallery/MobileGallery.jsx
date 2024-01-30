@@ -50,26 +50,34 @@ const MobileGallery = () => {
   const [imageIndex, setImageIndex] = useState(0);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [bodyOverflow, setBodyOverflow] = useState("auto");
+  const [isAutoSlideEnabled, setIsAutoSlideEnabled] = useState(true);
 
   const sliderRef = useRef(null);
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      // Programmatically click the next button
-      sliderRef.current.slickNext();
-    }, 4000);
+  useEffect(
+    () => {
+      const interval = setInterval(() => {
+        // Check if the modal is not open before advancing the slider
+        if (!isModalOpen && isAutoSlideEnabled) {
+          sliderRef.current.slickNext();
+        }
+      }, 5000);
 
-    return () => clearInterval(interval); // Cleanup the interval on component unmount
-  }, []); // Empty dependency array ensures that the effect runs only once
+      return () => clearInterval(interval); // Cleanup the interval on component unmount
+    },
+    [isModalOpen, isAutoSlideEnabled]
+  ); // Update the dependencies to include isAutoSlideEnabled
 
   const openModal = () => {
     setIsModalOpen(true);
-    setBodyOverflow("hidden"); // Disable scrolling
+    setBodyOverflow("hidden");
+    setIsAutoSlideEnabled(false); // Disable automatic sliding when modal is open
   };
 
   const closeModal = () => {
     setIsModalOpen(false);
-    setBodyOverflow("auto"); // Enable scrolling
+    setBodyOverflow("auto");
+    setIsAutoSlideEnabled(true); // Enable automatic sliding when modal is closed
   };
 
   const goToNextImage = () => {
@@ -136,7 +144,7 @@ const MobileGallery = () => {
                 className="w-96 h-52 lg:h-56 rounded-lg drop-shadow-md "
               />
               <div className="hover-overlay">
-                <p className="hover-text text-sm md:text-base font-semibold">
+                <p className="hover-text text-sm md:text-base font-semibold rounded-lg">
                   {item.hoverText}
                 </p>
               </div>
@@ -149,7 +157,7 @@ const MobileGallery = () => {
         isOpen={isModalOpen}
         onRequestClose={closeModal}
         contentLabel="Image Modal"
-        className="modal-content fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex justify-center items-center bg-white p-1 shadow-lg rounded-md w-11/12 md:w-1/2"
+        className="modal-content fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex justify-center items-center bg-white p-1 shadow-lg rounded-md w-11/12 md:w-1/2 z-50"
         overlayClassName="modal-overlay fixed top-0 left-0 w-full h-full bg-black bg-opacity-70 flex justify-center items-center z-50"
       >
         <div

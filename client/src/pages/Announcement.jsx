@@ -5,14 +5,12 @@ import AnnouncementContent from "../components/AnnouncementContent";
 
 const Announcement = () => {
   const announcementData = [
-    /*
     {
       title: "Exciting Announcement: Summer School of Truth!",
       date_time_created: "February 20, 2024",
       description:
         "Dear Saints, We're thrilled to announce the upcoming Summer School of Truth! Mark your calendars for June 20, 2024, as we gather at the Antipolo Meeting Hall for a transformative learning experience.\n\nJoin us for a season of growth, knowledge, and fellowship. Register now to secure your spot and be part of this enriching event. Let's embark on a journey of discovery and wisdom together!\n\nBest regards,\nThe Chuch in Rizal"
     }
-    */
   ];
 
   return (

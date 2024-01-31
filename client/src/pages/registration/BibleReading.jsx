@@ -1,10 +1,25 @@
-import React from "react";
+import React, { useState } from "react";
 import { FaArrowLeft } from "react-icons/fa6";
 import { useNavigate } from "react-router-dom";
 import Tooltip from "@mui/material/Tooltip";
 import Fade from "@mui/material/Fade";
+import axios from "axios";
 
 const BibleReading = () => {
+  const [formData, setFormData] = useState({
+    email: "",
+    qualification: "",
+    surname: "",
+    firstname: "",
+    locality: "",
+    status: "",
+    grade: "",
+    attended: "",
+    school: "",
+    contact: "",
+    amen: ""
+  });
+
   const registrationData = [
     {
       title: "RYP Bible Reading Pre-Reg Form",
@@ -19,6 +34,22 @@ const BibleReading = () => {
 
   const goBack = () => {
     navigate(-1); // Navigate back in the history
+  };
+
+  const handleChange = e => {
+    setFormData({ ...formData, [e.target.id]: e.target.value });
+  };
+
+  const handleSubmit = async () => {
+    try {
+      const response = await axios.post(
+        "http://localhost:3000/server/registration",
+        formData
+      );
+      console.log(response.data); // Log the response from the server
+    } catch (error) {
+      console.error("Error submitting form:", error);
+    }
   };
 
   return (
@@ -330,7 +361,10 @@ const BibleReading = () => {
         </label>
       </div>
       <div className="flex justify-between mt-4">
-        <div className="bg-primary text-white text-center p-2 rounded-md hover:opacity-85 disabled:opacity-80 text-sm sm:text-base cursor-pointer w-28">
+        <div
+          onClick={handleSubmit}
+          className="bg-primary text-white text-center p-2 rounded-md hover:opacity-85 disabled:opacity-80 text-sm sm:text-base cursor-pointer w-28"
+        >
           Submit
         </div>
         <div className="font-semibold text-primary p-2 text-sm sm:text-base cursor-pointer">

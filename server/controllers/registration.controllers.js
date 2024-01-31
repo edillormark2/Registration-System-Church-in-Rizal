@@ -1,6 +1,6 @@
 import BRreg from "../models/BRreg.model.js";
 
-export const registration = async (req, res, next) => {
+export const biblereadingreg = async (req, res, next) => {
   try {
     const {
       email,

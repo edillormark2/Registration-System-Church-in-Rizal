@@ -48,9 +48,10 @@ const BibleReading = () => {
     e.preventDefault();
     try {
       const response = await axios.post(
-        "http://localhost:3000/server/registration",
+        "http://localhost:3000/server/registration/biblereading",
         formData
       );
+
       console.log(response.data); // Log the response from the server
     } catch (error) {
       console.error("Error submitting form:", error);

@@ -19,11 +19,11 @@ const app = express();
 
 app.use(
   cors({
-    origin: "http://localhost:3000",
+    origin: "http://localhost:3001",
     methods: ["GET", "POST", "PUT", "DELETE"]
   })
 );
-
+app.use(express.json());
 app.use("/server/registration", regRoutes);
 
 // Error handler middleware
@@ -38,7 +38,6 @@ app.use((err, req, res, next) => {
 });
 
 // Start the server
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
+app.listen(3000, () => {
+  console.log("Server listening on port 3000");
 });

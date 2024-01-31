@@ -2,6 +2,7 @@ import express from "express";
 import mongoose from "mongoose";
 import dotenv from "dotenv";
 import cors from "cors";
+import regRoutes from "./routes/registration.route.js";
 
 dotenv.config();
 
@@ -23,6 +24,8 @@ app.use(
     credentials: true
   })
 );
+
+app.use("/server/registration", regRoutes);
 
 // Error handler middleware
 app.use((err, req, res, next) => {

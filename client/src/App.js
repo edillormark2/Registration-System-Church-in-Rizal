@@ -1,4 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import "react-toastify/dist/ReactToastify.css";
+import { ToastContainer } from "react-toastify";
 
 import "./App.css";
 import Navbar from "./components/Navbar/Navbar";
@@ -23,6 +25,7 @@ const App = () => {
   return (
     <div className={`App ${currentMode === "Dark" ? "dark" : ""}`}>
       <BrowserRouter>
+        <ToastContainer />
         <div className="flex flex-col min-h-screen">
           <div className="fixed bg-main-bg dark:bg-main-dark-bg navbar w-full">
             <Navbar />

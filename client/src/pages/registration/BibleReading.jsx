@@ -4,9 +4,14 @@ import { useNavigate } from "react-router-dom";
 import Tooltip from "@mui/material/Tooltip";
 import Fade from "@mui/material/Fade";
 import axios from "axios";
+import Swal from "sweetalert2";
+import { toast } from "react-toastify";
+import { useStateContext } from "../../context/ContextProvider";
 
 const BibleReading = () => {
-  const [formData, setFormData] = useState({
+  const { currentMode } = useStateContext();
+
+  const initialFormData = {
     email: "",
     qualification: "",
     surname: "",
@@ -18,7 +23,9 @@ const BibleReading = () => {
     school: "",
     contact: "",
     amen: ""
-  });
+  };
+
+  const [formData, setFormData] = useState(initialFormData);
 
   const registrationData = [
     {
@@ -33,7 +40,7 @@ const BibleReading = () => {
   const navigate = useNavigate();
 
   const goBack = () => {
-    navigate(-1); // Navigate back in the history
+    navigate(-1);
   };
 
   const handleChange = e => {
@@ -51,12 +58,20 @@ const BibleReading = () => {
         "http://localhost:3000/server/registration/biblereading",
         formData
       );
+      Swal.fire({
+        title: "Success!",
+        text:
+          "Amen. Praise the Lord, your response has been successfully submitted.",
+        icon: "success",
+        theme: currentMode === "Dark" ? "Dark" : "Light"
+      });
 
-      console.log(response.data); // Log the response from the server
+      console.log(response.data);
     } catch (error) {
-      console.error("Error submitting form:", error);
+      toast.error("Error submitting form:", error);
     }
   };
+
   return (
     <div className="px-4 py-4 md:py-10 max-w-4xl mx-auto">
       <Tooltip
@@ -118,6 +133,7 @@ const BibleReading = () => {
                 onChange={handleChange}
                 value="Agree"
                 checked={formData.qualification === "Agree"}
+                required
               />
               Agree
             </label>
@@ -129,6 +145,7 @@ const BibleReading = () => {
                 onChange={handleChange}
                 value="Disagree"
                 checked={formData.qualification === "Disagree"}
+                required
               />
               Disagree
             </label>
@@ -175,6 +192,7 @@ const BibleReading = () => {
                 onChange={handleChange}
                 value="Rodriguez"
                 checked={formData.locality === "Rodriguez"}
+                required
               />
               Rodriguez
             </label>
@@ -186,6 +204,7 @@ const BibleReading = () => {
                 onChange={handleChange}
                 value="San Mateo"
                 checked={formData.locality === "San Mateo"}
+                required
               />
               San Mateo
             </label>
@@ -197,6 +216,7 @@ const BibleReading = () => {
                 onChange={handleChange}
                 value="Cainta"
                 checked={formData.locality === "Cainta"}
+                required
               />
               Cainta
             </label>
@@ -208,6 +228,7 @@ const BibleReading = () => {
                 onChange={handleChange}
                 value="Taytay"
                 checked={formData.locality === "Taytay"}
+                required
               />
               Taytay
             </label>
@@ -219,6 +240,7 @@ const BibleReading = () => {
                 onChange={handleChange}
                 value="Angono"
                 checked={formData.locality === "Angono"}
+                required
               />
               Angono
             </label>
@@ -230,6 +252,7 @@ const BibleReading = () => {
                 onChange={handleChange}
                 value="Binangonan"
                 checked={formData.locality === "Binangonan"}
+                required
               />
               Binangonan
             </label>
@@ -241,6 +264,7 @@ const BibleReading = () => {
                 onChange={handleChange}
                 value="Antipolo"
                 checked={formData.locality === "Antipolo"}
+                required
               />
               Antipolo
             </label>
@@ -252,6 +276,7 @@ const BibleReading = () => {
                 onChange={handleChange}
                 value="Teresa"
                 checked={formData.locality === "Teresa"}
+                required
               />
               Teresa
             </label>
@@ -263,6 +288,7 @@ const BibleReading = () => {
                 onChange={handleChange}
                 value="Morong"
                 checked={formData.locality === "Morong"}
+                required
               />
               Morong
             </label>
@@ -274,6 +300,7 @@ const BibleReading = () => {
                 onChange={handleChange}
                 value="Baras"
                 checked={formData.locality === "Baras"}
+                required
               />
               Baras
             </label>
@@ -285,6 +312,7 @@ const BibleReading = () => {
                 onChange={handleChange}
                 value="Tanay"
                 checked={formData.locality === "Tanay"}
+                required
               />
               Tanay
             </label>
@@ -296,6 +324,7 @@ const BibleReading = () => {
                 onChange={handleChange}
                 value="Pililia"
                 checked={formData.locality === "Pililia"}
+                required
               />
               Pililia
             </label>
@@ -330,6 +359,7 @@ const BibleReading = () => {
               onChange={handleChange}
               value="Junior Young People"
               checked={formData.status === "Junior Young People"}
+              required
             />
             Junior Young People
           </label>
@@ -341,6 +371,7 @@ const BibleReading = () => {
               onChange={handleChange}
               value="Senior Young People"
               checked={formData.status === "Senior Young People"}
+              required
             />
             Senior Young People
           </label>
@@ -352,6 +383,7 @@ const BibleReading = () => {
               onChange={handleChange}
               value="Serving One"
               checked={formData.status === "Serving One"}
+              required
             />
             Serving One
           </label>
@@ -369,6 +401,7 @@ const BibleReading = () => {
               onChange={handleChange}
               value="Grade 5"
               checked={formData.grade === "Grade 5"}
+              required
             />
             Grade 5
           </label>
@@ -380,6 +413,7 @@ const BibleReading = () => {
               onChange={handleChange}
               value="Grade 6"
               checked={formData.grade === "Grade 6"}
+              required
             />
             Grade 6
           </label>
@@ -391,6 +425,7 @@ const BibleReading = () => {
               onChange={handleChange}
               value="Grade 7"
               checked={formData.grade === "Grade 7"}
+              required
             />
             Grade 7
           </label>
@@ -402,6 +437,7 @@ const BibleReading = () => {
               onChange={handleChange}
               value="Grade 8"
               checked={formData.grade === "Grade 8"}
+              required
             />
             Grade 8
           </label>
@@ -413,6 +449,7 @@ const BibleReading = () => {
               onChange={handleChange}
               value="Grade 9"
               checked={formData.grade === "Grade 9"}
+              required
             />
             Grade 9
           </label>
@@ -424,6 +461,7 @@ const BibleReading = () => {
               onChange={handleChange}
               value="Grade 10"
               checked={formData.grade === "Grade 10"}
+              required
             />
             Grade 10
           </label>
@@ -435,6 +473,7 @@ const BibleReading = () => {
               onChange={handleChange}
               value="Grade 11"
               checked={formData.grade === "Grade 11"}
+              required
             />
             Grade 11
           </label>
@@ -446,6 +485,7 @@ const BibleReading = () => {
               onChange={handleChange}
               value="Grade 12"
               checked={formData.grade === "Grade 12"}
+              required
             />
             Grade 12
           </label>
@@ -457,6 +497,7 @@ const BibleReading = () => {
               onChange={handleChange}
               value="First Year College"
               checked={formData.grade === "First Year College"}
+              required
             />
             First Year College
           </label>
@@ -468,6 +509,7 @@ const BibleReading = () => {
               onChange={handleChange}
               value="Second Year College"
               checked={formData.grade === "Second Year College"}
+              required
             />
             Second Year College
           </label>
@@ -479,6 +521,7 @@ const BibleReading = () => {
               onChange={handleChange}
               value="Third Year College"
               checked={formData.grade === "Third Year College"}
+              required
             />
             Third Year College
           </label>
@@ -490,6 +533,7 @@ const BibleReading = () => {
               onChange={handleChange}
               value="Fourth Year College"
               checked={formData.grade === "Fourth Year College"}
+              required
             />
             Fourth Year College
           </label>
@@ -501,6 +545,7 @@ const BibleReading = () => {
               onChange={handleChange}
               value="Fifth Year College"
               checked={formData.grade === "Fifth Year College"}
+              required
             />
             Fifth Year College
           </label>
@@ -518,6 +563,7 @@ const BibleReading = () => {
               onChange={handleChange}
               value="1"
               checked={formData.attended === "1"}
+              required
             />
             1
           </label>
@@ -529,6 +575,7 @@ const BibleReading = () => {
               onChange={handleChange}
               value="2"
               checked={formData.attended === "2"}
+              required
             />
             2
           </label>
@@ -540,6 +587,7 @@ const BibleReading = () => {
               onChange={handleChange}
               value="3"
               checked={formData.attended === "3"}
+              required
             />
             3
           </label>
@@ -551,6 +599,7 @@ const BibleReading = () => {
               onChange={handleChange}
               value="4"
               checked={formData.attended === "4"}
+              required
             />
             4
           </label>
@@ -562,6 +611,7 @@ const BibleReading = () => {
               onChange={handleChange}
               value="5"
               checked={formData.attended === "5"}
+              required
             />
             5
           </label>
@@ -573,6 +623,7 @@ const BibleReading = () => {
               onChange={handleChange}
               value="More Than 5 Times"
               checked={formData.attended === "More Than 5 Times"}
+              required
             />
             More Than 5 Times
           </label>
@@ -630,6 +681,7 @@ const BibleReading = () => {
               onChange={handleChange}
               value="Amen"
               checked={formData.amen === "Amen"}
+              required
             />
             Amen
           </label>
@@ -637,14 +689,14 @@ const BibleReading = () => {
         <div className="flex justify-between mt-4">
           <button
             type="submit"
-            className="bg-primary text-white text-center p-2 rounded-md hover:opacity-85 disabled:opacity-80 text-sm sm:text-base cursor-pointer w-28"
+            className="bg-primary text-white text-center p-2 rounded-md hover:opacity-70 disabled:opacity-50 text-sm sm:text-base cursor-pointer w-28"
           >
             Submit
           </button>
 
           <div
-            className="font-semibold text-primary p-2 text-sm sm:text-base cursor-pointer"
-            onClick={() => setFormData({})}
+            className="font-semibold text-primary p-2 text-sm sm:text-base cursor-pointer hover:opacity-50"
+            onClick={() => setFormData(initialFormData)}
           >
             Clear form
           </div>

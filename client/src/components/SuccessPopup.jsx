@@ -35,7 +35,8 @@ const SuccessPopup = props => {
     >
       <animated.div style={fade}>
         <Box
-          className={`rounded-md drop-shadow-xl p-6 ${currentMode === "Dark"
+          className={`rounded-md drop-shadow-xl p-6 mx-auto w-80 lg:w-96 ${currentMode ===
+          "Dark"
             ? "bg-secondary-dark-bg"
             : "bg-white"}`}
           sx={{
@@ -43,8 +44,6 @@ const SuccessPopup = props => {
             top: "50%",
             left: "50%",
             transform: "translate(-50%, -50%)",
-            width: "80%", // Adjust the width for mobile screens
-            maxWidth: "400px", // Set a maximum width to avoid excessive width on larger screens
             textAlign: "center" // Center the text and button
           }}
         >
@@ -54,10 +53,10 @@ const SuccessPopup = props => {
               ref={videoRef}
               src={success}
               alt="Animated Video"
-              className="mb-4"
+              className="rounded-3xl"
               style={{
                 width: "100%",
-                maxWidth: "90%",
+                maxWidth: "100%",
                 height: "auto",
                 display: "block",
                 margin: "0 auto",
@@ -69,11 +68,12 @@ const SuccessPopup = props => {
             />
 
             <p
-              className={`mb-8 text-sm sm:text-base ${currentMode === "Dark"
+              className={`mb-8 mt-4 text-sm sm:text-base ${currentMode ===
+              "Dark"
                 ? "text-gray-200"
                 : "text-black"}`}
             >
-              Amen. Praise the Lord, your registration in {title} has been
+              Amen. Praise the Lord! Your registration for {title} has been
               successfully submitted.
             </p>
             <div>

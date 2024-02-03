@@ -681,7 +681,7 @@ const BibleReading = () => {
             Amen
           </label>
         </div>
-        <div className="flex justify-between mt-4">
+        <div className="flex justify-between mt-4 mb-16 lg:mb-2">
           <button
             type="submit"
             className="bg-primary text-white text-center p-2 rounded-md hover:opacity-70 disabled:opacity-50 text-sm sm:text-base cursor-pointer w-28"
@@ -689,7 +689,11 @@ const BibleReading = () => {
             Submit
           </button>
           {openPopup &&
-            <SuccessPopup openPopup={openPopup} setOpenPopup={setOpenPopup} title="Bible Reading"/>}
+            <SuccessPopup
+              openPopup={openPopup}
+              setOpenPopup={setOpenPopup}
+              title="Bible Reading"
+            />}
 
           <div
             className="font-semibold text-primary p-2 text-sm sm:text-base cursor-pointer hover:opacity-50"

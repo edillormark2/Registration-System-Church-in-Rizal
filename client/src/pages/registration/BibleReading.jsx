@@ -7,9 +7,11 @@ import axios from "axios";
 import Swal from "sweetalert2";
 import { toast } from "react-toastify";
 import { useStateContext } from "../../context/ContextProvider";
+import SuccessPopup from "../../components/SuccessPopup";
 
 const BibleReading = () => {
   const { currentMode } = useStateContext();
+  const [openPopup, setOpenPopup] = useState(false);
 
   const initialFormData = {
     email: "",
@@ -58,14 +60,7 @@ const BibleReading = () => {
         "http://localhost:3000/server/registration/biblereading",
         formData
       );
-      Swal.fire({
-        title: "Success!",
-        text:
-          "Amen. Praise the Lord, your response has been successfully submitted.",
-        icon: "success",
-        theme: currentMode === "Dark" ? "Dark" : "Light"
-      });
-
+      setOpenPopup(true);
       console.log(response.data);
     } catch (error) {
       toast.error("Error submitting form:", error);
@@ -693,6 +688,8 @@ const BibleReading = () => {
           >
             Submit
           </button>
+          {openPopup &&
+            <SuccessPopup openPopup={openPopup} setOpenPopup={setOpenPopup} title="Bible Reading"/>}
 
           <div
             className="font-semibold text-primary p-2 text-sm sm:text-base cursor-pointer hover:opacity-50"

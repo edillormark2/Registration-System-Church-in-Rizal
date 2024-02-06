@@ -67,13 +67,14 @@ const SuccessPopup = props => {
                 width: "100%",
                 maxWidth: "100%",
                 height: "auto",
-                display: "block",
+                display: openPopup ? "block" : "none",
                 margin: "0 auto",
                 objectFit: "contain" // Preserve aspect ratio and avoid stretching
               }}
               autoPlay
               muted
               onEnded={handleVideoEnded}
+              preload="auto" // Preload the video
             />
 
             <p

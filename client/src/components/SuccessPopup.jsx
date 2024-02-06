@@ -6,7 +6,7 @@ import { useStateContext } from "../context/ContextProvider";
 import success from "../images/popup-success.mp4";
 
 const SuccessPopup = props => {
-  const { openPopup, setOpenPopup, title } = props;
+  const { openPopup, setOpenPopup, title, clearForm } = props;
   const { currentMode } = useStateContext();
   const videoRef = useRef(null);
 
@@ -25,6 +25,15 @@ const SuccessPopup = props => {
     from: { opacity: 0 },
     to: { opacity: openPopup ? 1 : 0 }
   });
+
+  const handleAnotherResponse = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+    clearForm();
+    setOpenPopup(false);
+  };
 
   return (
     <Modal
@@ -76,12 +85,21 @@ const SuccessPopup = props => {
               Amen. Praise the Lord! Your registration for {title} has been
               successfully submitted.
             </p>
-            <div>
+            <div className="flex flex-col gap-2 justify-center text-sm">
               <button
-                className="p-2 bg-primary text-white rounded-md px-4 hover:opacity-70"
+                className={`flex-grow p-2 bg-none border border-primary text-black rounded-md px-4 w-full ${currentMode ===
+                "Dark"
+                  ? "text-gray-200"
+                  : "text-black"}`}
+                onClick={handleAnotherResponse}
+              >
+                Submit another response
+              </button>
+              <button
+                className="flex-grow p-2 bg-primary text-white rounded-md px-4 hover:opacity-70 w-full"
                 onClick={handleClose}
               >
-                Amen
+                Close
               </button>
             </div>
           </div>

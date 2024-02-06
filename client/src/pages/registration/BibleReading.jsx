@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { FaArrowLeft } from "react-icons/fa6";
 import { useNavigate } from "react-router-dom";
 import Tooltip from "@mui/material/Tooltip";
@@ -28,6 +28,7 @@ const BibleReading = () => {
   };
 
   const [formData, setFormData] = useState(initialFormData);
+  const formRef = useRef(null);
 
   const registrationData = [
     {
@@ -65,6 +66,10 @@ const BibleReading = () => {
     } catch (error) {
       toast.error("Error submitting form:", error);
     }
+  };
+
+  const clearForm = () => {
+    setFormData(initialFormData);
   };
 
   return (
@@ -693,6 +698,7 @@ const BibleReading = () => {
               openPopup={openPopup}
               setOpenPopup={setOpenPopup}
               title="Bible Reading"
+              clearForm={clearForm}
             />}
 
           <div
